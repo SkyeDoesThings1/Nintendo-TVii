@@ -1,4 +1,4 @@
-# Nintendo TVii (Until we think of a cooler name)
+# Nintendo TVii (Until I think of a cooler name)
 
 ## What was/is Nintendo TVii?
 Nintendo TVii was a streaming service that came pre-installed on the Nintendo Wii U. It launched on December 8, 2012, in Japan and December 20, 2012, in North America. Unfortunately, it never launched in Europe due to licensing issues. The service was discontinued on August 11, 2015, in North America and November 7, 2017, in Japan.
