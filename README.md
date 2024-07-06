@@ -1,5 +1,8 @@
 # Nintendo TVii (Until I think of a cooler name)
 
+# How do I install this
+Currently you can't install this on a Wii U due to Nintendo Networks shut down. Until Pretendo releases 3rd party account servers you need to use the site. Sorry!
+
 ## What was/is Nintendo TVii?
 Nintendo TVii was a streaming service that came pre-installed on the Nintendo Wii U. It launched on December 8, 2012, in Japan and December 20, 2012, in North America. Unfortunately, it never launched in Europe due to licensing issues. The service was discontinued on August 11, 2015, in North America and November 7, 2017, in Japan.
 
@@ -7,7 +10,7 @@ Nintendo TVii was a streaming service that came pre-installed on the Nintendo Wi
 Nintendo TVii was part of the now-defunct Nintendo Network. It allowed users to watch shows from Hulu, Amazon Prime Video, Netflix, and their cable network. While watching live TV, Nintendo held polls and allowed users doodle on the screen. The service also integrated with many social medias such as, Miiverse, Facebook, and Twitter, and earn points by predicting plays during sports events.
 
 ## How was TVii launched?
-Nintendo TVii was accessible directly from the Wii U Menu, located between the Internet Browser and Notifications. However, this icon was removed on August 17, 2015【10†source】.
+Nintendo TVii was accessible directly from the Wii U Menu, located between the Internet Browser and Notifications. However, this icon was removed on August 17, 2015.
 
 ## How will I access it if it was removed? Will I have to region change??
 No! Although Nintendo TVii was removed from the Wii U menu, the applet is still installed on your Wii U. Currently, there are three main ways to access it (Guides for these methods will be added later):
