@@ -1,5 +1,6 @@
-// Vino emulation for desktop/mobile users\
+// Vino emulation for desktop/mobile users
 let emulation = true;
+
 if (typeof vino === 'undefined' && emulation === true) {
   console.log('Begining Vino emulation');
   window.vino = {
@@ -17,12 +18,15 @@ if (typeof vino === 'undefined' && emulation === true) {
     memo_reset: function () {
       console.log('Memo has been reset!');
     },
+    exit: function () {
+      console.log('Could not close tab! Redirecting to Google!');
+      window.location.replace('http://www.google.com');
+    },
   };
-  // changes the image size depending on device
+
+  // Changes the image size depending on device
   (document.getElementById('main-body').style.backgroundSize = 'cover'),
-    (document.getElementById('main-body').style.backgroundRepeat = 'no-repeat'),
-    (document.getElementById('main-body').style.width = '854'),
-    (document.getElementById('main-body').style.height = '480');
+    (document.getElementById('main-body').style.backgroundRepeat = 'no-repeat');
 }
 
 // Disables Vino emulation
@@ -32,12 +36,11 @@ function noEmulation() {
     console.log('Vino emulation disabled');
     delete window.vino;
     (document.getElementById('main-body').style.backgroundSize = ''),
-      (document.getElementById('main-body').style.backgroundRepeat = ''),
-      (document.getElementById('main-body').style.width = ''),
-      (document.getElementById('main-body').style.height = '');
+      (document.getElementById('main-body').style.backgroundRepeat = '');
   }
 }
 
+// Opens memo and show the user their drawing
 function beginDrawing() {
   vino.memo_open();
   if (vino.memo_isFinish) {
@@ -49,6 +52,7 @@ function beginDrawing() {
   }
 }
 
+// Resets memo
 function resetDrawing() {
   vino.memo_reset(),
     (document.getElementById('memoText').style.display = 'none'),
@@ -56,4 +60,13 @@ function resetDrawing() {
     (document.getElementById('memo').style.display = 'none'),
     (document.getElementById('memoView').style.display = 'none'),
     (document.getElementById('memo').src = '');
+}
+
+// Do I need to explain this one
+function closeTVii() {
+  try {
+    vino.exit();
+  } catch (error) {
+    vino.exitForce();
+  }
 }

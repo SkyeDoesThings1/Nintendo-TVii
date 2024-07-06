@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 // Define a route for the new user page
 app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(__dirname, 'views', 'main.html'));
 });
 
 // Sends Whitelist.txt to the Wii U

@@ -1,5 +1,5 @@
 <white-acr>a
-<gold-domain>https://192.168.1.160/
-<white-domain>https://192.168.1.160/
+<gold-domain>skyedoesthings1.github.io/Nintendo-TVii/
+<white-domain>skyedoesthings1.github.io/Nintendo-TVii/
 <white-title-ID>000500301001310A
-<top-page>https://192.168.1.160/
+<top-page>skyedoesthings1.github.io/Nintendo-TVii/
