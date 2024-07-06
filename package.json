@@ -1,0 +1,19 @@
+{
+  "name": "nintendo-tvii",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "SkyeDoesThings1",
+  "license": "ISC",
+  "description": "A clone of Nintendo TVii",
+  "devDependencies": {
+    "@pretendonetwork/wiiu-vino-types": "^1.0.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0"
+  }
+}
