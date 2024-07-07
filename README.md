@@ -1,7 +1,7 @@
 # Nintendo TVii (Until I think of a cooler name)
 
 # How do I install this
-Currently you can't install this on a Wii U due to Nintendo Networks shut down. Until Pretendo releases 3rd party account servers you need to use the site. Sorry!
+Currently you can't install this on a Wii U due to Nintendo Networks shut down. Until Pretendo releases 3rd party account servers you need can use it on the site https://vino.stupidverse.xyz. Sorry!
 
 ## What was/is Nintendo TVii?
 Nintendo TVii was a streaming service that came pre-installed on the Nintendo Wii U. It launched on December 8, 2012, in Japan and December 20, 2012, in North America. Unfortunately, it never launched in Europe due to licensing issues. The service was discontinued on August 11, 2015, in North America and November 7, 2017, in Japan.
