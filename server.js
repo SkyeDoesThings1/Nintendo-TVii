@@ -1,57 +1,63 @@
 const express = require('express');
-const path = require('path');
-const os = require('os');
-/*
-const https = require('https');
-*/
-const fs = require('fs');
 const app = express();
+const https = require('https');
+const fs = require('fs');
 const port = 443;
+const path = require('path');
 
-// Paths to your SSL certificate and key
-const privateKeyPath = 'certs/key.pem';
-const certificatePath = 'certs/cert.pem';
+const privateKey = fs.readFileSync('certs/key.pem');
+const certificate = fs.readFileSync('certs/cert.pem');
 
-/*
-// Load the SSL certificate and key
-const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
-const certificate = fs.readFileSync(certificatePath, 'utf8');
-const credentials = { key: privateKey, cert: certificate };
-*/
+app.set('view engine', 'ejs');
 
-// Serve static files from the root directory
-app.use(express.static(path.join(__dirname)));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/src', express.static(__dirname + '/src'));
 
-// Define a route for the root URL
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'newUser.html'));
+  res.render('setup');
 });
 
-// Define a route for the new user page
 app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'main.html'));
+  res.render('main');
 });
 
-// Sends Whitelist.txt to the Wii U
-app.get('/whitelist.txt?country=us', (req, res) => {
-  res.sendFile('whitelist.txt');
-});
+app.get('/whitelist.txt', (req, res) => {
+  const country = req.query.country;
 
-// Function to get the local IP address
-function getLocalIPAddress() {
-  const interfaces = os.networkInterfaces();
-  for (const iface of Object.values(interfaces)) {
-    for (const alias of iface) {
-      if (alias.family === 'IPv4' && !alias.internal) {
-        return alias.address;
-      }
-    }
+  let filePath;
+  switch (country) {
+    case 'us':
+      filePath = path.join(__dirname, 'Whitelists/US/whitelist.txt');
+      break;
+    case 'eu':
+      filePath = path.join(__dirname, 'Whitelists/EU/whitelist.txt');
+      break;
+    case 'jp':
+      filePath = path.join(__dirname, 'Whitelists/JP/whitelist.txt');
+      break;
+    default:
+      res.status(400).send('Invalid country parameter.');
+      return;
   }
-  return 'localhost';
-}
 
-// Start the server
-const computersIP = getLocalIPAddress();
-createServer(credentials, app).listen(port, () => {
-  console.log(`Server running at http(s)://${computersIP}:${port}`);
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      res.status(500).send('Error reading the file.');
+      return;
+    }
+    res.type('txt').send(data);
+  });
 });
+
+https
+  .createServer(
+    {
+      key: privateKey,
+      cert: certificate,
+    },
+    app
+  )
+  .listen(port, () => {
+    console.log(`Server running on https://localhost:${port}`);
+  });

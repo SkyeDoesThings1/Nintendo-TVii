@@ -2,6 +2,6 @@
 certs/cert.pem
 certs/key.pem
 package-lock.json
-
-# Removing server.js because its an old one and GitHub pages doesn't use it
-server.js
+whitelists/US/whitelist.txt
+whitelists/EU/whitelist.txt
+whitelists/JP/whitelist.txt

@@ -9,10 +9,35 @@
       .hidden-element {
         display: none;
       }
+
+      #mii-info {
+        display: flex;
+        align-items: center;
+      }
+
+      #avatar {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+      }
+
+      #nnid-name {
+        font-size: 18px;
+        color: #fff;
+      }
     </style>
   </head>
-  <body id="main-body">
+  <body id="main-body" onload="getName();" onload>
     <main>
+      <div
+        data-sound="SE_A_DECIDE_TOUCH_OFF"
+        onclick="tvii.showSettingsModal();"
+        navi_scroll=""
+        id="mii-info"
+      >
+        <a href="javascript:void(0);"> <img id="avatar" src="" /></a>
+        <p id="nnid-name">Placeholder....</p>
+      </div>
       <div id="icon-wrapper">
         <div class="icon-container" id="favorites-container">
           <img src="../src/favorites.png" />
@@ -42,11 +67,12 @@
           data-sound="SE_COMMON_FINISH_TOUCH_OFF"
           onclick="closeTVii();"
         >
-          <div id="news-wrapper">
-            <a class="news-button" onclick="beginDrawing();"> </a>
-          </div>
         </a>
       </div>
+      <div id="news-wrapper">
+        <a class="news-button" onclick="beginDrawing();"> </a>
+      </div>
+
       <br /><br /><br /><br /><br /><br /><br />
       <div class="hidden-element" id="memoView">
         <h2 class="hidden-element" id="memoText">Here’s your drawing!</h2>

@@ -1,10 +1,5 @@
-# You can patch this config to your TVii applet with this Aroma plugin
-# https://github.com/darcellapy/vino-config-patcher-plugin
-# Does NOT work with Tiramisu unless you modify the files with FTP
-
-
 #ur0 is default
-url0:https://skyedoesthings1.github.io/Nintendo-TVii
+url0:file:///vol/content/index.html
 
 # on/off debug print of client
 CallbackDebugPrint:0
@@ -22,7 +17,7 @@ WhiteList_UseCache:1
 
 # on/off javascript error print on console
 # 0:off, 1:on
-JavaScriptErrorPrintOnConsole:1
+JavaScriptErrorPrintOnConsole:0
 
 # on/off javascript error print on dialog
 # 0:off, 1:on
@@ -36,7 +31,7 @@ ConsoleLogPrint:0
 # 0:Development (display DRC-screen with some debug information)
 # 1:Demo        (display only DRC-screen at center)
 # 2:Final       (display nothing)
-TVStyle:0
+TVStyle:2
 
 #LoadUrl
 # 0: Load from WhiteList (If not exist, load from url0.)

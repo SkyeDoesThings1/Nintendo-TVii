@@ -1,72 +1,49 @@
-// Vino emulation for desktop/mobile users
-let emulation = true;
+const express = require('express');
+const app = express();
+const https = require('https');
+const fs = require('fs');
+const path = require('path');
+const port = 443;
 
-if (typeof vino === 'undefined' && emulation === true) {
-  console.log('Begining Vino emulation');
-  window.vino = {
-    memo_open: function () {
-      console.log('Memo open');
-    },
-    memo_isFinish: function () {
-      console.log('Memo is finished');
-      return true;
-    },
-    memo_getImagePng: function () {
-      console.log('got png!');
-      return 'https://i.ibb.co/rwr9J38/descarga.png';
-    },
-    memo_reset: function () {
-      console.log('Memo has been reset!');
-    },
-    exit: function () {
-      console.log('Could not close tab! Redirecting to Google!');
-      window.location.replace('http://www.google.com');
-    },
-  };
+const privateKey = fs.readFileSync('certs/key.pem');
+const certificate = fs.readFileSync('certs/cert.pem');
 
-  // Changes the image size depending on device
-  (document.getElementById('main-body').style.backgroundSize = 'cover'),
-    (document.getElementById('main-body').style.backgroundRepeat = 'no-repeat');
-}
+app.set('view engine', 'ejs');
 
-// Disables Vino emulation
-function noEmulation() {
-  emulation = false;
-  if (typeof vino !== 'undefined') {
-    console.log('Vino emulation disabled');
-    delete window.vino;
-    (document.getElementById('main-body').style.backgroundSize = ''),
-      (document.getElementById('main-body').style.backgroundRepeat = '');
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/src', express.static(__dirname + '/src'));
+
+app.get('/', (req, res) => {
+  res.render('setup');
+});
+
+app.get('/main', (req, res) => {
+  res.render('main');
+});
+
+app.get('/whitelist.txt', (req, res) => {
+  if (req.query.country === 'us') {
+    const filePath = path.join(__dirname, 'src', 'whitelist.txt');
+    res.download(filePath, (err) => {
+      if (err) {
+        console.error('Error sending file:', err);
+        res.status(500).send('Internal Server Error');
+      }
+    });
+  } else {
+    res.status(404).send('Not found');
   }
-}
+});
 
-// Opens memo and show the user their drawing
-function beginDrawing() {
-  vino.memo_open();
-  if (vino.memo_isFinish) {
-    (document.getElementById('memoText').style.display = 'inline'),
-      (document.getElementById('resetButton').style.display = 'inline'),
-      (document.getElementById('memo').style.display = 'inline'),
-      (document.getElementById('memoView').style.display = 'inline'),
-      (document.getElementById('memo').src = vino.memo_getImagePng());
-  }
-}
-
-// Resets memo
-function resetDrawing() {
-  vino.memo_reset(),
-    (document.getElementById('memoText').style.display = 'none'),
-    (document.getElementById('resetButton').style.display = 'none'),
-    (document.getElementById('memo').style.display = 'none'),
-    (document.getElementById('memoView').style.display = 'none'),
-    (document.getElementById('memo').src = '');
-}
-
-// Do I need to explain this one
-function closeTVii() {
-  try {
-    vino.exit();
-  } catch (error) {
-    vino.exitForce();
-  }
-}
+https
+  .createServer(
+    {
+      key: privateKey,
+      cert: certificate,
+    },
+    app
+  )
+  .listen(port, () => {
+    console.log(`Server running on https://localhost:${port}`);
+  });

@@ -1,5 +1,0 @@
-<white-acr>a
-<gold-domain>skyedoesthings1.github.io/Nintendo-TVii/
-<white-domain>skyedoesthings1.github.io/Nintendo-TVii/
-<white-title-ID>000500301001310A
-<top-page>skyedoesthings1.github.io/Nintendo-TVii/

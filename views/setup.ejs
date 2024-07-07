@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nintendo TVii</title>
+    <link rel="stylesheet" href="../css/setup.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <img src="../src/vinoLogo.png" alt="Nintendo TVii" class="logo" />
+      <div class="top">
+        <div class="description">
+          Nintendo TVii makes watching TV simple and fun by bringing together
+          <br />
+          everything you need on the GamePad.
+          <a href="#" class="learn-more">Learn more.</a>
+        </div>
+        <p id="zipcode">To begin, enter your Zip Code below.</p>
+        <div class="zip-input">
+          <img
+            id="avatar"
+            alt="Avatar"
+            class="avatar"
+            onload="getMiiImage();"
+          />
+          <input type="text" id="zipCodeInput" />
+        </div>
+      </div>
+    </div>
+    <div id="exit-wrapper">
+      <a
+        navi_target=""
+        class="exit-button"
+        data-sound="SE_COMMON_FINISH_TOUCH_OFF"
+        onclick="closeTVii();"
+      ></a>
+    </div>
+    <script src="../js/vino.min.js"></script>
+  </body>
+</html>

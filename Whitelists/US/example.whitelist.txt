@@ -1,0 +1,5 @@
+<white-acr>a
+<gold-domain>https://example.com
+<white-domain>https://example.com
+<white-title-ID>000500301001310A
+<top-page>https://example.com
