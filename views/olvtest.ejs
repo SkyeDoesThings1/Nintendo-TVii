@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nintendo TVii - Miiverse Test</title>
+    <meta content="Nintendo TVii" property="og:title" />
+    <meta content="A clone of Nintendo TVii!" property="og:description" />
+    <meta content="https://vino.stupidverse.xyz/main" property="og:url" />
+    <meta
+      content="https://vino.stupidverse.xyz/src/tvii.png/"
+      property="og:image"
+    />
+    <meta content="#fc0345" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" type="image/x-icon" href="../src/favicon.ico" />
+    <link rel="stylesheet" href="../css/vino.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Click the button to begin drawing!</h1>
+      <button id="button" onclick="beginDrawing();">darw</button>
+      <br />
+      <div class="hidden-element" id="memoView">
+        <h2 class="hidden-element" id="memoText">Here’s your drawing!</h2>
+        <br />
+        <img class="hidden-element" id="memo" src="" />
+        <br />
+        <button
+          class="hidden-element"
+          onclick="resetDrawing()"
+          id="resetButton"
+        >
+          Reset
+        </button>
+      </div>
+    </main>
+    <script src="../js/vino.js"></script>
+  </body>
+</html>

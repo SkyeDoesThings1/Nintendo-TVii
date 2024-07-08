@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nintendo TVii</title>
-    <meta content="Nintendo TVii" property="og:title" />
+    <meta content="Nintendo TVii - Home" property="og:title" />
     <meta content="A clone of Nintendo TVii!" property="og:description" />
     <meta content="https://vino.stupidverse.xyz/main" property="og:url" />
     <meta
@@ -13,30 +13,9 @@
     />
     <meta content="#fc0345" data-react-helmet="true" name="theme-color" />
     <link rel="icon" type="image/x-icon" href="../src/favicon.ico" />
-    <link rel="stylesheet" href="../css/setup.min.css" />
-    <style>
-      .hidden-element {
-        display: none;
-      }
-
-      #mii-info {
-        display: flex;
-        align-items: center;
-      }
-
-      #avatar {
-        width: 70px;
-        height: 70px;
-        margin-right: 10px;
-      }
-
-      #nnid-name {
-        font-size: 18px;
-        color: #fff;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/vino.css" />
   </head>
-  <body id="main-body" onload="getName();" onload>
+  <body id="main-body" onload="getName(); getMii();">
     <main>
       <div
         data-sound="SE_A_DECIDE_TOUCH_OFF"
@@ -45,27 +24,37 @@
         id="mii-info"
       >
         <a href="javascript:void(0);"> <img id="avatar" src="" /></a>
-        <p id="nnid-name">Placeholder....</p>
+        <p id="nnid-name">Loading...</p>
       </div>
       <div id="icon-wrapper">
         <div class="icon-container" id="favorites-container">
-          <img src="../src/favorites.png" />
+          <button class="image-button" onclick="handleFavoritesClick()">
+            <img src="../src/favorites.png" alt="Favorites" />
+          </button>
           <span class="icon-label" id="favorites-text">Favorites</span>
         </div>
         <div class="icon-container" id="tv-container">
-          <img src="../src/tv.png" />
+          <button class="image-button" onclick="handleTVClick()">
+            <img src="../src/tv.png" alt="TV" />
+          </button>
           <span class="icon-label" id="tv-text">TV</span>
         </div>
         <div class="icon-container" id="movies-container">
-          <img src="../src/movies.png" />
+          <button class="image-button" onclick="handleMoviesClick()">
+            <img src="../src/movies.png" alt="Movies" />
+          </button>
           <span class="icon-label" id="movies-text">Movies</span>
         </div>
         <div class="icon-container" id="sports-container">
-          <img src="../src/sports.png" />
+          <button class="image-button" onclick="handleSportsClick()">
+            <img src="../src/sports.png" alt="Sports" />
+          </button>
           <span class="icon-label" id="sports-text">Sports</span>
         </div>
         <div class="icon-container" id="tvtag-container">
-          <img src="../src/tv-tag.png" />
+          <button class="image-button" onclick="handleTVTagClick()">
+            <img src="../src/tv-tag.png" alt="TV Tag" />
+          </button>
           <span class="icon-label" id="tvtag-text">TV Tag</span>
         </div>
       </div>
@@ -79,24 +68,14 @@
         </a>
       </div>
       <div id="news-wrapper">
-        <a class="news-button" onclick="beginDrawing();"> </a>
+        <a class="news-button" href="/olv/test"> </a>
       </div>
-
-      <br /><br /><br /><br /><br /><br /><br />
-      <div class="hidden-element" id="memoView">
-        <h2 class="hidden-element" id="memoText">Here’s your drawing!</h2>
-        <br />
-        <img class="hidden-element" id="memo" src="" />
-        <br />
-        <button
-          class="hidden-element"
-          onclick="resetDrawing()"
-          id="resetButton"
-        >
-          Reset
-        </button>
+      <div navi_scroll="" id="search">
+        <a href="javascript:void(0);" onclick="searchY();"
+          ><input type="text" class="search" />
+        </a>
       </div>
     </main>
-    <script src="../js/vino.min.js"></script>
+    <script src="../js/vino.js"></script>
   </body>
 </html>

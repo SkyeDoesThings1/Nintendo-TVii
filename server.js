@@ -22,6 +22,10 @@ app.get('/main', (req, res) => {
   res.render('main');
 });
 
+app.get('/olv/test', (req, res) => {
+  res.render('olvtest');
+});
+
 app.get('/whitelist.txt', (req, res) => {
   const country = req.query.country;
 

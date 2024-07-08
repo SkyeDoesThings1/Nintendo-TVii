@@ -21,7 +21,7 @@ body {
   font-family: 'nintendo_NTLG-DB_002';
   background-color: #555555;
   color: #fff;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body.alternate {
@@ -197,4 +197,52 @@ button {
 
 #zipcode {
   margin-right: 50%;
+}
+
+.search {
+  bottom: -3px;
+  left: 212px;
+  position: fixed;
+  z-index: 10;
+  width: 428px;
+  height: 62px;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5);
+  border: 1px solid #000000;
+  background: url('../src/search.png') no-repeat 0px 0px;
+  border-top-left-radius: 26px;
+  border-top-right-radius: 26px;
+}
+
+.hidden-element {
+  display: none;
+}
+
+#mii-info {
+  display: flex;
+  align-items: center;
+}
+
+#avatar {
+  width: 70px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+#nnid-name {
+  font-size: 18px;
+  color: #fff;
+}
+
+button.image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button.image-button img {
+  display: block;
 }
