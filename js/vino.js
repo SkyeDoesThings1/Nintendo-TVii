@@ -23,7 +23,10 @@ if (typeof vino === 'undefined' && emulation === true) {
       window.location.href = 'https://www.google.com';
     },
     act_getMiiImage: function () {
-      console.log('Got Mii Image!');
+      const avatarUrl =
+        'https://pretendo-cdn.b-cdn.net/mii/1112166243/normal_face.png?lm=202405120222050000';
+      console.log('Got Mii Image:', avatarUrl);
+      return avatarUrl;
     },
     act_getName: function () {
       const name = 'Sarah';
