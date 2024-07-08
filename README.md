@@ -1,4 +1,4 @@
-# Nintendo TVii (Until I think of a cooler name)
+# Cappuccino U
 
 # How do I install this
 Currently you can't install this on a Wii U due to Nintendo Networks shut down. Until Pretendo releases 3rd party account servers you need can use it on the site https://vino.stupidverse.xyz. Sorry!
