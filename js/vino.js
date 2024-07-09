@@ -1,4 +1,4 @@
-// Vino emulation for desktop/mobile users
+// Vino emulation for desktop users
 let emulation = true;
 
 if (typeof vino === 'undefined' && emulation === true) {
@@ -41,25 +41,11 @@ if (typeof vino === 'undefined' && emulation === true) {
     },
   };
 
-  const zipCodeInput = document.getElementById('zipCodeInput');
-  if (zipCodeInput) {
-    zipCodeInput.addEventListener('keypress', function (event) {
-      if (event.key === 'Enter') {
-        window.location.href = '/main';
-      }
-    });
-  }
-
+  // Makes the image 16:9 for desktop users
   const mainBody = document.getElementById('main-body');
   if (mainBody) {
     mainBody.style.backgroundSize = 'cover';
     mainBody.style.backgroundRepeat = 'no-repeat';
-  }
-
-  const avatar = document.getElementById('avatar');
-  if (avatar) {
-    avatar.src =
-      'https://pretendo-cdn.b-cdn.net/mii/1112166243/normal_face.png?lm=202405120222050000';
   }
 }
 
@@ -122,12 +108,14 @@ function closeTVii() {
   }
 }
 
+// Grabs the users Mii
 function getMii() {
   const mii = vino.act_getMiiImage();
   const avatar = document.getElementById('avatar');
   if (avatar) avatar.src = mii;
 }
 
+// Grabs the users Nintendo Network username
 function getName() {
   const name = vino.act_getName();
   const display = document.getElementById('nnid-name');

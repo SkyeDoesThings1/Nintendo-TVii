@@ -110,6 +110,7 @@ body.scrollable {
   width: 65px;
   height: 65px;
   z-index: 9000;
+  cursor: pointer;
 }
 
 #exit-wrapper:before {

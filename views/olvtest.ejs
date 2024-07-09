@@ -8,7 +8,7 @@
     <meta content="A clone of Nintendo TVii!" property="og:description" />
     <meta content="https://vino.stupidverse.xyz/olv/test/" property="og:url" />
     <meta
-      content="https://vino.stupidverse.xyz/src/tvii.png/"
+      content="https://vino.stupidverse.xyz/src/tvii.png"
       property="og:image"
     />
     <meta content="#fc0345" data-react-helmet="true" name="theme-color" />
@@ -46,15 +46,15 @@
     <link rel="stylesheet" href="../css/vino.css" />
   </head>
 
-  <body>
+  <body id="main-body">
     <main>
       <h1>Click the button to begin drawing!</h1>
-      <button id="button" onclick="beginDrawing();">darw</button>
+      <button id="button" onclick="beginDrawing();">Draw</button>
       <br />
       <div class="hidden-element" id="memoView">
         <h2 class="hidden-element" id="memoText">Here’s your drawing!</h2>
         <br />
-        <img class="hidden-element" id="memo" src="" />
+        <img class="hidden-element" id="memo" src="" alt="Drawing" />
         <br />
         <button
           class="hidden-element"

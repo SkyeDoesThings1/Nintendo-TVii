@@ -89,6 +89,7 @@ body {
   width: 65px;
   height: 65px;
   z-index: 9000;
+  cursor: pointer;
 }
 
 #exit-wrapper:before {
@@ -113,5 +114,40 @@ body {
   -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
   background: url('../src/exit.png');
   border-top-right-radius: 25px;
+  background-repeat: no-repeat;
+}
+
+#next-wrapper {
+  position: fixed;
+  display: block;
+  bottom: -1px;
+  right: -1px;
+  width: 65px;
+  height: 65px;
+  z-index: 9000;
+}
+
+#next-wrapper:before {
+  position: fixed;
+  content: url('../src/before.png');
+  bottom: 14.5px;
+  right: 11px;
+  z-index: -9999;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.next-button {
+  position: fixed;
+  bottom: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  z-index: 10;
+  border: 1px solid #000000;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
+  background: url('../src/Next.png');
+  border-top-left-radius: 25px;
   background-repeat: no-repeat;
 }
