@@ -1,0 +1,5 @@
+<white-acr>a
+<gold-domain>https://eshop.pretendo.cc
+<white-domain>https://eshop.pretendo.cc
+<white-title-ID>000500301001310A
+<top-page>https://eshop.pretendo.cc
