@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<result>
+  <has_error>0</has_error>
+  <version>1</version>
+  <endpoint>
+    <host>eshop.pretendo.cc:83</host>
+    <api_host>eshop.pretendo.cc:83</api_host>
+    <portal_host>eshop.pretendo.cc:83</portal_host>
+    <n3ds_host>eshop.pretendo.cc:83</n3ds_host>
+  </endpoint>
+</result>
